@@ -33,11 +33,11 @@
             lblProducto = new Label();
             lblCantidad = new Label();
             lblPrecioUnitario = new Label();
-            txtProducto = new TextBox();
             txtPrecioUnitario = new TextBox();
             dtpFecha = new DateTimePicker();
             btmRegistrar = new Button();
             nudCantidad = new NumericUpDown();
+            cmbProducto = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
             SuspendLayout();
             // 
@@ -55,58 +55,58 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(307, 103);
+            lblFecha.Font = new Font("Segoe UI", 15F);
+            lblFecha.Location = new Point(250, 116);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(38, 15);
+            lblFecha.Size = new Size(62, 28);
             lblFecha.TabIndex = 1;
             lblFecha.Text = "Fecha";
             // 
             // lblProducto
             // 
             lblProducto.AutoSize = true;
-            lblProducto.Location = new Point(307, 159);
+            lblProducto.Font = new Font("Segoe UI", 15F);
+            lblProducto.Location = new Point(250, 172);
             lblProducto.Name = "lblProducto";
-            lblProducto.Size = new Size(56, 15);
+            lblProducto.Size = new Size(93, 28);
             lblProducto.TabIndex = 2;
             lblProducto.Text = "Producto";
             // 
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(307, 214);
+            lblCantidad.Font = new Font("Segoe UI", 15F);
+            lblCantidad.Location = new Point(250, 227);
             lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(55, 15);
+            lblCantidad.Size = new Size(91, 28);
             lblCantidad.TabIndex = 3;
             lblCantidad.Text = "Cantidad";
             // 
             // lblPrecioUnitario
             // 
             lblPrecioUnitario.AutoSize = true;
-            lblPrecioUnitario.Location = new Point(307, 269);
+            lblPrecioUnitario.Font = new Font("Segoe UI", 15F);
+            lblPrecioUnitario.Location = new Point(250, 282);
             lblPrecioUnitario.Name = "lblPrecioUnitario";
-            lblPrecioUnitario.Size = new Size(85, 15);
+            lblPrecioUnitario.Size = new Size(142, 28);
             lblPrecioUnitario.TabIndex = 4;
             lblPrecioUnitario.Text = "Precio Unitario";
             // 
-            // txtProducto
-            // 
-            txtProducto.Location = new Point(431, 151);
-            txtProducto.Name = "txtProducto";
-            txtProducto.Size = new Size(100, 23);
-            txtProducto.TabIndex = 5;
-            // 
             // txtPrecioUnitario
             // 
-            txtPrecioUnitario.Location = new Point(431, 269);
+            txtPrecioUnitario.Font = new Font("Segoe UI", 15F);
+            txtPrecioUnitario.Location = new Point(421, 279);
             txtPrecioUnitario.Name = "txtPrecioUnitario";
-            txtPrecioUnitario.Size = new Size(100, 23);
+            txtPrecioUnitario.Size = new Size(100, 34);
             txtPrecioUnitario.TabIndex = 7;
             // 
             // dtpFecha
             // 
-            dtpFecha.Location = new Point(431, 97);
+            dtpFecha.Font = new Font("Segoe UI", 15F);
+            dtpFecha.Format = DateTimePickerFormat.Short;
+            dtpFecha.Location = new Point(421, 107);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(200, 23);
+            dtpFecha.Size = new Size(341, 34);
             dtpFecha.TabIndex = 8;
             // 
             // btmRegistrar
@@ -121,21 +121,31 @@
             // 
             // nudCantidad
             // 
-            nudCantidad.Location = new Point(431, 206);
+            nudCantidad.Font = new Font("Segoe UI", 15F);
+            nudCantidad.Location = new Point(421, 216);
             nudCantidad.Name = "nudCantidad";
-            nudCantidad.Size = new Size(100, 23);
+            nudCantidad.Size = new Size(100, 34);
             nudCantidad.TabIndex = 10;
+            // 
+            // cmbProducto
+            // 
+            cmbProducto.Font = new Font("Segoe UI", 15F);
+            cmbProducto.FormattingEnabled = true;
+            cmbProducto.Location = new Point(421, 166);
+            cmbProducto.Name = "cmbProducto";
+            cmbProducto.Size = new Size(121, 36);
+            cmbProducto.TabIndex = 11;
             // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(832, 495);
+            Controls.Add(cmbProducto);
             Controls.Add(nudCantidad);
             Controls.Add(btmRegistrar);
             Controls.Add(dtpFecha);
             Controls.Add(txtPrecioUnitario);
-            Controls.Add(txtProducto);
             Controls.Add(lblPrecioUnitario);
             Controls.Add(lblCantidad);
             Controls.Add(lblProducto);
@@ -143,6 +153,7 @@
             Controls.Add(lblRegistrodeVenta);
             Name = "frmPrincipal";
             Text = "frmPrincipal";
+            Load += frmPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)nudCantidad).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -160,5 +171,6 @@
         private DateTimePicker dtpFecha;
         private Button btmRegistrar;
         private NumericUpDown nudCantidad;
+        private ComboBox cmbProducto;
     }
 }
