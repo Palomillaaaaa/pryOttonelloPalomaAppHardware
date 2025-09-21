@@ -151,6 +151,7 @@
             // 
             // cmbProducto
             // 
+            cmbProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbProducto.FormattingEnabled = true;
             cmbProducto.Items.AddRange(new object[] { "CPU", "RAM", "GPU" });
             cmbProducto.Location = new Point(617, 220);
