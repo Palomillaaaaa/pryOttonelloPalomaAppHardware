@@ -17,6 +17,14 @@ namespace pryOttonelloPalomaAppHardware
             InitializeComponent();
         }
 
+        //Declaración de Variables
+        DateTime VFecha = DateTime.Now;
+        string VProducto;
+        int VCantidad;
+        int VPrecio;
+        int VPrecioFinal;
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -29,13 +37,13 @@ namespace pryOttonelloPalomaAppHardware
 
         private void cmbProducto_TextChanged(object sender, EventArgs e)
         {
-            if (cmbProducto.Text != "")
+            if (cmbProducto.Text == "")
             {
-                nudCantidad.Enabled = true;
+                nudCantidad.Enabled = false;
             }
             else
             {
-                nudCantidad.Enabled = false;
+                nudCantidad.Enabled = true;
             }
         }
 
@@ -52,6 +60,24 @@ namespace pryOttonelloPalomaAppHardware
         }
 
         private void mtbPrecioUnitario_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btmCancelar_Click(object sender, EventArgs e)
+        {
+            cmbProducto.SelectedIndex = -1;
+            nudCantidad.Text = "";
+            mtbPrecioUnitario.Text = "";
+
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
         {
 
         }
