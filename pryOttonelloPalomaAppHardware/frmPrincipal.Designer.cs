@@ -39,6 +39,7 @@
             btmCancelar = new Button();
             mtbPrecioUnitario = new MaskedTextBox();
             cmbProducto = new ComboBox();
+            lblResultados = new Label();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
             SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             // 
             lblRegistrodeVenta.AutoSize = true;
             lblRegistrodeVenta.Font = new Font("Bernard MT Condensed", 20F);
-            lblRegistrodeVenta.Location = new Point(383, 45);
+            lblRegistrodeVenta.Location = new Point(387, 31);
             lblRegistrodeVenta.Margin = new Padding(4, 0, 4, 0);
             lblRegistrodeVenta.Name = "lblRegistrodeVenta";
             lblRegistrodeVenta.Size = new Size(514, 47);
@@ -58,7 +59,7 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(434, 198);
+            lblFecha.Location = new Point(440, 127);
             lblFecha.Margin = new Padding(4, 0, 4, 0);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(57, 25);
@@ -68,7 +69,7 @@
             // lblProducto
             // 
             lblProducto.AutoSize = true;
-            lblProducto.Location = new Point(434, 292);
+            lblProducto.Location = new Point(440, 224);
             lblProducto.Margin = new Padding(4, 0, 4, 0);
             lblProducto.Name = "lblProducto";
             lblProducto.Size = new Size(85, 25);
@@ -78,7 +79,7 @@
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(434, 383);
+            lblCantidad.Location = new Point(440, 309);
             lblCantidad.Margin = new Padding(4, 0, 4, 0);
             lblCantidad.Name = "lblCantidad";
             lblCantidad.Size = new Size(83, 25);
@@ -88,7 +89,7 @@
             // lblPrecioUnitario
             // 
             lblPrecioUnitario.AutoSize = true;
-            lblPrecioUnitario.Location = new Point(434, 475);
+            lblPrecioUnitario.Location = new Point(440, 409);
             lblPrecioUnitario.Margin = new Padding(4, 0, 4, 0);
             lblPrecioUnitario.Name = "lblPrecioUnitario";
             lblPrecioUnitario.Size = new Size(127, 25);
@@ -97,7 +98,7 @@
             // 
             // dtpFecha
             // 
-            dtpFecha.Location = new Point(611, 188);
+            dtpFecha.Location = new Point(617, 124);
             dtpFecha.Margin = new Padding(4, 5, 4, 5);
             dtpFecha.Name = "dtpFecha";
             dtpFecha.Size = new Size(284, 31);
@@ -106,7 +107,7 @@
             // 
             // btmRegistrar
             // 
-            btmRegistrar.Location = new Point(849, 547);
+            btmRegistrar.Location = new Point(846, 650);
             btmRegistrar.Margin = new Padding(4, 5, 4, 5);
             btmRegistrar.Name = "btmRegistrar";
             btmRegistrar.Size = new Size(131, 58);
@@ -118,7 +119,7 @@
             // nudCantidad
             // 
             nudCantidad.Enabled = false;
-            nudCantidad.Location = new Point(611, 370);
+            nudCantidad.Location = new Point(617, 306);
             nudCantidad.Margin = new Padding(4, 5, 4, 5);
             nudCantidad.Name = "nudCantidad";
             nudCantidad.Size = new Size(100, 31);
@@ -127,7 +128,7 @@
             // 
             // btmCancelar
             // 
-            btmCancelar.Location = new Point(709, 547);
+            btmCancelar.Location = new Point(706, 650);
             btmCancelar.Margin = new Padding(4, 5, 4, 5);
             btmCancelar.Name = "btmCancelar";
             btmCancelar.Size = new Size(131, 58);
@@ -139,7 +140,7 @@
             // mtbPrecioUnitario
             // 
             mtbPrecioUnitario.Enabled = false;
-            mtbPrecioUnitario.Location = new Point(611, 470);
+            mtbPrecioUnitario.Location = new Point(617, 406);
             mtbPrecioUnitario.Margin = new Padding(4, 5, 4, 5);
             mtbPrecioUnitario.Mask = "99999";
             mtbPrecioUnitario.Name = "mtbPrecioUnitario";
@@ -151,7 +152,8 @@
             // cmbProducto
             // 
             cmbProducto.FormattingEnabled = true;
-            cmbProducto.Location = new Point(611, 284);
+            cmbProducto.Items.AddRange(new object[] { "CPU", "RAM", "GPU" });
+            cmbProducto.Location = new Point(617, 220);
             cmbProducto.Margin = new Padding(4, 5, 4, 5);
             cmbProducto.Name = "cmbProducto";
             cmbProducto.Size = new Size(171, 33);
@@ -159,11 +161,22 @@
             cmbProducto.SelectedIndexChanged += cmbProducto_TextChanged;
             cmbProducto.TextChanged += cmbProducto_TextChanged;
             // 
+            // lblResultados
+            // 
+            lblResultados.BackColor = SystemColors.ControlLight;
+            lblResultados.BorderStyle = BorderStyle.Fixed3D;
+            lblResultados.Location = new Point(440, 482);
+            lblResultados.Name = "lblResultados";
+            lblResultados.Size = new Size(537, 135);
+            lblResultados.TabIndex = 14;
+            lblResultados.Click += lblResultados_Click;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1189, 825);
+            Controls.Add(lblResultados);
             Controls.Add(cmbProducto);
             Controls.Add(mtbPrecioUnitario);
             Controls.Add(btmCancelar);
@@ -197,5 +210,6 @@
         private Button btmCancelar;
         private MaskedTextBox mtbPrecioUnitario;
         private ComboBox cmbProducto;
+        private Label lblResultados;
     }
 }

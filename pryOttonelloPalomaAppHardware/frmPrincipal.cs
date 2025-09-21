@@ -21,7 +21,7 @@ namespace pryOttonelloPalomaAppHardware
         DateTime VFecha = DateTime.Now;
         string VProducto;
         int VCantidad;
-        int VPrecio;
+        int VPrecioUnitario;
         int VPrecioFinal;
 
 
@@ -32,7 +32,14 @@ namespace pryOttonelloPalomaAppHardware
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            VFecha = dtpFecha.Value;
+            VProducto = cmbProducto.Text;
+            VCantidad = Convert.ToInt32(nudCantidad.Value);
+            VPrecioFinal = Convert.ToInt32(mtbPrecioUnitario.Text);
+            VPrecioFinal = VPrecioUnitario * VCantidad;
+           
+            lblResultados.Text = VFecha + " " + VProducto + " " + VCantidad + " $" + 
+                VPrecioFinal + "\n";
         }
 
         private void cmbProducto_TextChanged(object sender, EventArgs e)
@@ -49,19 +56,26 @@ namespace pryOttonelloPalomaAppHardware
 
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
         {
-            if (nudCantidad.Value > 0)
+            if (nudCantidad.Value == 0)
             {
-                mtbPrecioUnitario.Enabled = true;
+                mtbPrecioUnitario.Enabled = false;
             }
             else
             {
-                mtbPrecioUnitario.Enabled = false;
+                mtbPrecioUnitario.Enabled = true;
             }
         }
 
         private void mtbPrecioUnitario_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
+            if (mtbPrecioUnitario.Text == "") 
+            {
+                btmRegistrar.Enabled = false;
+            }
+            else 
+            { 
+                btmRegistrar.Enabled = true; 
+            }
         }
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
@@ -78,6 +92,13 @@ namespace pryOttonelloPalomaAppHardware
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            cmbProducto.Items.Add("CPU");
+            cmbProducto.Items.Add("RAM");
+            cmbProducto.Items.Add("GUP");
+        }
+
+        private void lblResultados_Click(object sender, EventArgs e)
         {
 
         }
